@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--secondary-color);
+}
+
+.search {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+}
+
+.search:focus {
+    outline: none;
+    background-color: var(--primary-color);
+}
+
+.search::placeholder {
+    color: #7378c5;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.movie {
+    width: 300px;
+    background-color: var(--secondary-color);
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added this to fix the positioning of .overview */
+    overflow: hidden; /* Ensure the overview doesn't flow outside the movie container */
+}
+
+.movie img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.movie-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #eee;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+.movie-info span {
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green {
+    color: lightgreen;
+}
+
+.movie-info span.orange {
+    color: orange;
+}
+
+.movie-info span.red {
+    color: red;
+}
+
+.overview {
+    background-color: #fff;
+    color: #3b3d5184;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}
+#tags{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin:30px auto;
+}
+
+.tag {  
+    color: #fff;
+    padding: 10px 20px;
+    background-color: orange;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.highlight {
+    background-color: red;
+}
+.no-results {
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+}
